@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web App</title>
+
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> -->
+    <script src="js/jquery331min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="bg-image"></div>
+        <h1 class="project-title">Mitosis Classification</h1>
+        <!-- <h3 class="small-text">Supervisor: <a href="https://www.researchgate.net/profile/Asifullah-Khan" target="_blank">Dr. Asifullah Khan</a></h3>
+        <h3 class="small-text">Co-Supervisor: <a href="https://www.researchgate.net/profile/Anabia-Sohail-2" target="_blank">Ms. Anabia Sohail</a></h3> -->
+        <h3 class="small-text">By: <a href="https://www.researchgate.net/profile/Anabia-Sohail-2" target="_blank">Ms. Anabia Sohail</a></h3>
+    </header>
+    <!-- <section id="abstract" class="section-type-1">
+        <h1 class="section-title">Abstract</h1>
+        <h1 class="abstract-text">Cancer is one of the most commonly occurring deadly diseases around the world. Lymphocytes are considered as an indicator of cancer, which accumulates at the site of tumor regions in response of immune system. Lymphocyte’s detection and quantification play an important role in determining the cancer progression and therapeutic efficacy. However, automation of lymphocyte detection system using Machine learning techniques poses a number of challenges such as unavailability of annotations, sparse representation of lymphocytes, and irregular deposition of stains and presence of artifacts, which gives the false impression of lymphocytes on tissues. Therefore, this project aims to develop an automated detection of lymphocyte in histopathological images. In this regard, we used the idea of Channel Boosting in the backbone of Mask-RCNN to improve its feature extraction ability. We evaluated our model on open-source dataset LYSTO and the F-score increased from 0.87 to 0.89 relative to original Mask-RCNN.</h1>
+    </section> -->
+    <main id="main">
+        <section class="container">
+            <button type="button" id="input-image-button" class="btn-1">Open Image</button>
+            <input type="file" id="input-image" />
+            <canvas id="canvas"></canvas>
+            <select name="classifier-name" id="classifier-name" class="btn-1">
+                <option>--SELECT CLASSIFIER--</option>
+                <option value="RHINet">RHINet</option>
+                <option value="ASTMNet">ASTMNet</option>
+                <option value="DSTMNet">DSTMNet</option>
+                <option value="ATTENNet">ATTENNet</option>
+                <option value="ResidualNet">ResidualNet</option>
+            </select>
+            <button type="button" id="process-img" class="btn-1" onclick="processImage()">Perform Inference</button>
+            <img id="loading-gif" src="./images/loading.gif" alt="loading.gif">
+            <h3 id="predictions"></h3>
+        </section>
+    </main>
+    <!-- <section id="proposed-model" class="section-type-1">
+        <h1 class="section-title">Proposed Mask-RCNN Architecture</h1>
+        <img id="maskrcnn-architecture" src="maskrcnn-lymphocytenet3-cm1.jpg" alt="Proposed Mask-RCNN Architecture">
+    </section>
+    <section id="results" class="section-type-1">
+        <h1 class="section-title">Results of Mask-RCNN with different Backbones</h1>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Backbone</th>
+                    <th>Recall</th>
+                    <th>Precision</th>
+                    <th>F-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ResNet-50</td>
+                    <td>0.8848</td>
+                    <td>0.8765</td>
+                    <td>0.8806</td>
+                </tr>
+                <tr>
+                    <td>ResNet-CBAM-50</td>
+                    <td>0.9373</td>
+                    <td>0.8210</td>
+                    <td>0.8753</td>
+                </tr>
+                <tr class="colored-row">
+                    <td>LymphocyteNet</td>
+                    <td>0.8940</td>
+                    <td>0.8919</td>
+                    <td class="bold-text">0.8930</td>
+                </tr>
+            </tbody>
+        </table>
+    </section> -->
+</body>
+
+</html>
